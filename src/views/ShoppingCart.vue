@@ -7,7 +7,7 @@
         
       </div>
       <div class="col-md-4 pt-5">
-        <!-- <SideNav /> -->
+        
         <Cart />
       </div>
       
@@ -17,9 +17,10 @@
 
 <script>
 
-import {ref} from "vue";
 import CartItem from "../components/CartItem.vue";
 import Cart from "../components/Cart.vue";
+import { computed } from "vue";
+import {useStore} from "vuex";
 
 export default {
   name: 'ShoppingCart',
@@ -27,42 +28,16 @@ export default {
     CartItem,
     Cart
   },
-
   setup(){
+    const store = useStore();
 
-      let cart = ref();
+    let cart = computed(function () {
+        return store.state.cart
+    });
 
-      cart = [
-        {
-          id : 1,
-          name : "Chelsea Shoes",
-          price : 200,
-          shortdesc : "Best Drip in the Market",
-          url : "images/chelsea-shoes.png",
-          quantity : 1
-        },
-        {
-          id : 2,
-          name : "Kimono",
-          price : 50,
-          shortdesc : "Classy, Stylish, Dope",
-          url : "images/kimono.png",
-          quantity : 1
-        },
-        {
-          id : 3,
-          name : "Rolex",
-          price : 2500,
-          shortdesc : "Elegance built in",
-          url : "images/rolex.png",
-          quantity : 1
-        }
-       
-      ]
-
-      return {
-          cart
-      }
+    return {
+        cart
+    }
   }
 }
 </script>
