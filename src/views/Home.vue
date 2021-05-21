@@ -51,14 +51,14 @@ export default {
         },
         {
           id : 3,
-          name : "Rolex",
+          name : "Watch",
           price : 2500,
           shortdesc : "Elegance built in",
           url : "images/rolex.png"
         },
         {
           id : 4,
-          name : "Baelerry Wallet",
+          name : "Wallet",
           price : 80,
           shortdesc : "Sleek, Trendy, Clean",
           url : "images/wallet.png"
